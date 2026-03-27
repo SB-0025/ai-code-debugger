@@ -1,0 +1,29 @@
+# Virtual Environment
+venv/
+.env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# ML models (optional - large files)
+*.pt
+*.bin
+*.h5
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build files
+dist/
+build/
