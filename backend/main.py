@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from routes.debug_route import router
 
 app = FastAPI()
 
-class code_input(BaseModel):
-    code: str
+# connects route file to main app
+app.include_router(router)
 
 
 @app.get("/")
@@ -12,46 +12,4 @@ def home():
     return{
         "message": "Welcome to backend",
     }
-
-@app.post("/debug")
-def debug(data: code_input):
-    result = data.code
-
-    # Rule 1: Missing closing quote
-    if "print(" in result and "'" in result and not result.endswith("')"):
-        return {
-            "error": "Syntax Error",
-            "explanation": "Missing closing quote or bracket.",
-            "fixed_code": "print('Hello')"
-        }
-
-    # Rule 2: Missing colon in if
-    if "if" in result and ":" not in result:
-        return {
-            "error": "Syntax Error",
-            "explanation": "Missing ':' after if statement.",
-            "fixed_code": "if condition: \n    pass"
-        }
-
-    # Rule 3: Missing parentheses in print (Python 3)
-    if "print " in result:
-        return {
-            "error": "Syntax Error",
-            "explanation": "print should use parentheses in Python 3.",
-            "fixed_code": "print('Hello')"
-        }
-    
-    # Rule 4 : Missing for keyword in loop
-    if("for" in result and "in" not in result ):
-        return {
-            "error" : "Syntax Error",
-            "explanation": "For loop should use 'in' keyword.",
-            "fixed_code": "or i in range(5):\n    pass"
-        }
-    
-    return{
-        "message" :"Its Working!!",
-        "your code": result
-    }
-
 
