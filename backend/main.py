@@ -6,6 +6,7 @@ app = FastAPI()
 class code_input(BaseModel):
     code: str
 
+
 @app.get("/")
 def home():
     return{
@@ -14,10 +15,18 @@ def home():
 
 @app.post("/debug")
 def debug(data: code_input):
-    print(data)
+    result = data.code
+
+    if( "print('"in result and not result.endswith("')")):
+        return {
+            "error": "Syntax Error",
+            "explanation": "Looks like you forgot to close the quote or bracket.",
+            "fixed_code": "print('Hello')"
+        }
+    
     return{
         "message" :"Its Working!!",
-        "your code": data.code
+        "your code": result
     }
 
 
