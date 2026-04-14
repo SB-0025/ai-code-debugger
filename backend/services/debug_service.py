@@ -1,5 +1,4 @@
 def debug_code_logic(result: str):
-    
     # Rule 1: Missing closing quote
     if "print(" in result and "'" in result and not result.endswith("')"):
         return {

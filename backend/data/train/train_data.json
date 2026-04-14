@@ -1,0 +1,82 @@
+[
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "print('Hello World'",
+        "output": "Error: SyntaxError",
+        "Root Cause": "Missing closing parenthesis",
+        "Fixed Code": "print('Hello World')",
+        "Best Practice": "Always check matching brackets"
+    },
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "def add(a, b):\nprint(a + b)",
+        "output": "Error: IndentationError",
+        "Root Cause": "Function body is not indented",
+        "Fixed Code": "def add(a, b):\n    print(a + b)",
+        "Best Practice": "Use proper indentation in Python"
+    },
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "a = '5' + 5",
+        "output": "Error: TypeError",
+        "Root Cause": "Cannot concatenate string and integer",
+        "Fixed Code": "a = int('5') + 5",
+        "Best Practice": "Ensure data types are compatible"
+    },
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "lst = [1,2,3]\nprint(lst[5])",
+        "output": "Error: IndexError",
+        "Root Cause": "Index out of range",
+        "Fixed Code": "print(lst[2])",
+        "Best Practice": "Check list length before accessing index"
+    },
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "d = {'a': 1}\nprint(d['b'])",
+        "output": "Error: KeyError",
+        "Root Cause": "Key does not exist in dictionary",
+        "Fixed Code": "print(d.get('b', 0))",
+        "Best Practice": "Use dict.get() to avoid KeyError"
+    },
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "for i in range(5):\n    while True:\n        break",
+        "output": "Error: Logic Error",
+        "Root Cause": "Unnecessary loop structure",
+        "Fixed Code": "for i in range(5):\n    pass",
+        "Best Practice": "Avoid redundant loops"
+    },
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "def func(x=[]):\n    x.append(1)\n    return x",
+        "output": "Error: Mutable Default Argument",
+        "Root Cause": "Default list is shared across calls",
+        "Fixed Code": "def func(x=None):\n    if x is None:\n        x = []\n    x.append(1)\n    return x",
+        "Best Practice": "Avoid mutable default arguments"
+    },
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "def add(a, b):\n    a + b",
+        "output": "Error: Missing Return",
+        "Root Cause": "Function does not return value",
+        "Fixed Code": "def add(a, b):\n    return a + b",
+        "Best Practice": "Always return expected values"
+    },
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "for i in range(1,5):\n    print(i)",
+        "output": "Error: Off-by-one Error",
+        "Root Cause": "Range excludes last number",
+        "Fixed Code": "for i in range(1,6):\n    print(i)",
+        "Best Practice": "Understand how range() works"
+    },
+    {
+        "instruction": "Fix the bug in the following Python code. Explain the error, root cause, and provide the corrected code.",
+        "input": "while True:\n    pass",
+        "output": "Error: Infinite Loop",
+        "Root Cause": "Loop has no termination condition",
+        "Fixed Code": "while False:\n    pass",
+        "Best Practice": "Ensure loop exit condition"
+    }
+]

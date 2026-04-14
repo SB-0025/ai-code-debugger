@@ -5,5 +5,6 @@ from services.debug_service import debug_code_logic
 router = APIRouter()
 
 @router.post("/debug")
+
 def debug(data: CodeInput):
-    return debug_code_logic(data.code) #
+    return debug_code_logic(data.code)
