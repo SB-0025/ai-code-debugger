@@ -1,29 +1,128 @@
 # Virtual Environment
 venv/
+env/
 .env/
 .venv/
+ENV/
 
 # Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
 # Environment variables
 .env
+.env.local
 
 # Logs
 *.log
+logs/
 
 # OS files
 .DS_Store
+Thumbs.db
+desktop.ini
 
-# ML models (optional - large files)
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ML models (large files - don't commit to git)
 *.pt
 *.bin
 *.h5
+*.safetensors
+*.ckpt
+*.pth
+models/saved_models/
+checkpoints/
+
+# Training data (optional - can be large)
+# Uncomment if your dataset is huge
+# data/train/*.json
 
 # Jupyter
 .ipynb_checkpoints/
+*.ipynb
 
 # Build files
 dist/
 build/
+*.egg-info/
+
+# Test coverage
+.coverage# Virtual Environment
+venv/
+env/
+.env/
+.venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ML models (large files - don't commit to git)
+*.pt
+*.bin
+*.h5
+*.safetensors
+*.ckpt
+*.pth
+models/saved_models/
+checkpoints/
+
+# Training data (optional - can be large)
+# Uncomment if your dataset is huge
+# data/train/*.json
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Build files
+dist/
+build/
+*.egg-info/
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+htmlcov/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
