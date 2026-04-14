@@ -98,9 +98,10 @@ desktop.ini
 models/saved_models/
 checkpoints/
 
-# Training data (optional - can be large)
-# Uncomment if your dataset is huge
-# data/train/*.json
+# Training data
+data/train/*.json
+data/train/*.jsonl
+data/train/*.csv
 
 # Jupyter
 .ipynb_checkpoints/
